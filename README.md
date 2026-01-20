@@ -1,13 +1,13 @@
 # README for Username Validation Script
 
 ## Author Information
-- **Name:** [Your Full Name]
-- **Course:** [Course Number and Name]
+- **Name:** Owen Hickey
+- **Course:** CPSC 293
 - **Assignment:** Username Validation
-- **Date:** [Date of Completion]
+- **Date:** Jan 20 2026 
 
 ## Program Description
-[Write 2-3 sentences in your own words describing what this script does and its purpose. Explain the problem it solves and how it works at a high level.]
+This script validates usernames entered by the user according to specific formatting rules. It uses a while loop to repeatedly prompt for input until a valid username is provided, checking each entry  against a regular expression pattern with grep
 
 ## Username Requirements
 This script validates usernames according to the following rules:
@@ -27,11 +27,7 @@ To test with the provided input file:
 ```
 
 ## How the Script Works
-[Explain in 3-5 sentences how your script validates usernames. Include information about:]
-- The use of the `while` loop
-- The `grep` command with extended regular expressions
-- The meaning of the `-E` and `-v` flags
-- The redirect `> /dev/null 2>&1`
+The script uses a while loop to continuously prompt the user for a username until a valid one is entered. Each input is piped to the grep command. The `-E` flag enables extended regex syntax, allowing the use of special characters like `+`, `{n,m}`, and `$` without escaping them. The `-q` flag runs grep in quiet mode, suppressing output and only returning an exit code.
 
 ## Regular Expression Pattern
 The validation uses the following regular expression pattern:
@@ -45,15 +41,36 @@ This pattern ensures that:
 
 ## Testing Results
 [Describe your testing process and results. Include:]
-- Example valid usernames you tested (at least two)
-- Example invalid usernames and why they fail (at least two)
+'js' - INVALID
+'jsmith' - VALID
+'j' - INVALID
+'smith' - VALID
+'jsmith123' - VALID
+'jsmith12345678' - INVALID
+'jSmith' - INVALID
+'jsmith!' - INVALID
+'jsmith_2023' - VALID
+'dev_user' - VALID
+'test123' - VALID
+'admin' - VALID
+'user' - VALID
+'a' - INVALID
+'ab' - INVALID
+'john_doe' - VALID
+'user123456' - VALID
+'test-user' - INVALID
+'TEST123' - INVALID
+'testuser12345678' - INVALID
+'_' - INVALID
+'__test' - INVALID
+'123abc' - INVALID
 - How you used the username-input file to test
 
-## Challenges and Solutions
-[Optional: Describe any challenges you encountered while creating this script and how you solved them. This could include debugging issues, understanding regular expressions, or Git workflow problems.]
 
 ## Resources
-[List any resources you used (class slides, ChatGPT, etc.). Please refer to the course syllabus for more details on citations.]
+CLUADE CODE - bug fixes and running Shellcheck. 
+- it helped me update homebrew 
+- Helped summerize in README
 
 ## License
 This project is part of coursework for Chapman University and is intended for educational purposes.
